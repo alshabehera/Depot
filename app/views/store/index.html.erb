@@ -9,7 +9,9 @@ inline-block" id="notice">
 Your Pragmatic Catalog
 </h1>
 <ul>
+<% cache @products do %>
 <% @products.each do |product| %>
+<% cache @products do %>
 <li class='flex mb-6'>
 <%= image_tag(product.image_url,
 class: 'object-contain w-40 h-48 shadow mr-6') %>
@@ -23,6 +25,8 @@ class: 'object-contain w-40 h-48 shadow mr-6') %>
 </div>
 </div>
 </li>
+<% end %>
+<% end %>
 <% end %>
 </ul>
 </div>
