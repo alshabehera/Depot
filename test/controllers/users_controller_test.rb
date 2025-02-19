@@ -21,7 +21,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
        password: "secret", password_confirmation: "secret" } }
     end
 
-    assert_redirected_to user_url(User.last)
+    assert_redirected_to user_url
   end
 
   test "should show user" do

@@ -1,2 +1,11 @@
 class ApplicationController < ActionController::Base
-end
+    before_action :authorize # Restrict access by default
+  
+    protected
+  
+    def authorize
+      unless User.find_by(id: session[:user_id])
+        redirect_to login_url, notice: "Please log in"
+      end
+    end
+  end
